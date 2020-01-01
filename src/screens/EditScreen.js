@@ -15,9 +15,11 @@ const EditScreen = ({navigation}) => {
     const [content, setContent] = useState(blog.content)
 
 
-    return <View>
-        <BlogPostForm/>
-    </View>
+    return <BlogPostForm initialValues={{title:blog.title,content:blog.content}}
+     onSubmit={(title,content)=>{
+         
+       // addBlogPost(title,content,()=> navigation.navigate('Index'))
+    }}/>
 }
 
 const styles = StyleSheet.create({
